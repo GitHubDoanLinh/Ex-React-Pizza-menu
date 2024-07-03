@@ -1,0 +1,3 @@
+1: Jsx là cú pháp mở rộng của Javascript, cho phép viết các phần tử HTML trực tiếp trong JavaScript, cũng như viết mã Js, Css bên trong HTML.
+   đại loại là nó kết hợp Javascript, HTML và Css lại với nhau. Sau đó Babel sẽ biên dịch đống mã thập cẩm này thành mã Js (cụ thể là các lệnh
+   gọi hàm React.createElement(), từ đó tạo ra các phần tử React)
