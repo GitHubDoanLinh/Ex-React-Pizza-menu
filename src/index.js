@@ -60,7 +60,7 @@ function App() {
 function Header() {
     // const style = {color: "red", fontsize: "54px", textTransform: "uppercase"};
     const style = {};
-    return(
+    return (
         <header className={'header'}>
             <h1 style={style}>Fast React Pizza CO.</h1>
         </header>
@@ -69,7 +69,7 @@ function Header() {
 
 function Menu() {
     return (
-        <div>
+        <div className={'menu'}>
             <h2>Our menu</h2>
             <Pizza/>
             <Pizza/>
@@ -82,16 +82,16 @@ function Footer() {
     const hour = new Date().getHours();
     const openHour = 6;
     const closeHour = 17;
-    const isOpen = hour >=openHour && hour <= closeHour;
+    const isOpen = hour >= openHour && hour <= closeHour;
     console.log(isOpen);
-    return <footer>{new Date().toLocaleTimeString()}. We are currently open</footer>
+    return <footer className={'footer'}>{new Date().toLocaleTimeString()}. We are currently open</footer>
 }
 
 function Pizza() {
     return (
         <div>
             <img src={'pizzas/spinaci.jpg'} alt={'pizza spinaci'}/>
-            <h1>Pizza Spinaci</h1>
+            <h3>Pizza Spinaci</h3>
             <p>Tomato, mozarella, spinach, and ricotta cheese</p>
         </div>
     )
