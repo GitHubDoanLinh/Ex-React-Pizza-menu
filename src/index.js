@@ -68,14 +68,18 @@ function Header() {
 }
 
 function Menu() {
+    const pizzas = pizzaData;
+    const numPizzas = pizzas.length;
     return (
         <div className={'menu'}>
             <h2>Our menu</h2>
-            <ul className={"pizzas"}>
-                {pizzaData.map((pizza) =>
-                    <Pizza pizzaObj = {pizza} key = {pizza.name}/>
+            {numPizzas > 0 && <ul className={"pizzas"}>
+                {pizzas.map((pizza) =>
+                    <Pizza pizzaObj={pizza} key={pizza.name}/>
                 )}
-            </ul>
+            </ul>}
+
+
             {/*<Pizza name='Pizza spinaci'*/}
             {/*       ingredients='Tomato, mozarella, spinach, and ricotta cheese'*/}
             {/*       photoName='pizzas/spinaci.jpg'*/}
@@ -108,7 +112,19 @@ function Footer() {
     const closeHour = 17;
     const isOpen = hour >= openHour && hour <= closeHour;
     console.log(isOpen);
-    return <footer className={'footer'}>{new Date().toLocaleTimeString()}. We are currently open</footer>
+    return (
+        <footer className={'footer'}>
+            {isOpen && (
+                <div className={"order"}>
+                    <p>
+                        We are open until {closeHour}:00. Come visit us or order online.
+                    </p>
+                    <button className={"btn"}>Order</button>
+                </div>
+            )}
+        </footer>
+    )
+
 }
 
 //React v18
