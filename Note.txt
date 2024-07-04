@@ -4,6 +4,7 @@
    1.2 React render 1 comp dựa trên dữ liệu hiện tại của nó và giao diện người dùng, điều này luôn được đồng bộ hóa
    1.3 Dữ liệu mà người dùng React render 1 comp được tạo từ props(dl tới từ comp cha và comp con ko thể sửa dl đó) và
        state(là dl bên trong comp được cập nhật bởi logic của nó)
+   1.4 jsx có cú pháp khá giống html, nhưng ta có thể viết mã` Js trong jsx bằng cách sử dụng {} trừ cấu trúc lặp và rẽ nhánh
 2: 2.1 Props để truyền dữ liệu và giao tiếp từ comp cha => comp con. Là 1 công cụ thiết yếu của React để cấu hình và tùy chỉnh các comp
    2.2 Props là các "cài đặt" mà ta có thể sử dụng để làm cho comp cha kiểm soát comp con của nó trông như thế nào và hoạt động ntn
    2.3 Props chỉ có thể được cập nhật bởi chính comps cha, Props là bất biến và chỉ đọc (vì nếu thay đổi props trong comp hiện tại sẽ ảnh hưởng tới
