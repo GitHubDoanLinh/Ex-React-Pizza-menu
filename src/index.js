@@ -58,8 +58,7 @@ function App() {
 }
 
 function Header() {
-    // const style = {color: "red", fontsize: "54px", textTransform: "uppercase"};
-    const style = {};
+    const style = {color: "#edc84b", fontsize: "54px", textTransform: "uppercase"};
     return (
         <header className={'header'}>
             <h1 style={style}>Fast React Pizza CO.</h1>
@@ -73,11 +72,19 @@ function Menu() {
     return (
         <div className={'menu'}>
             <h2>Our menu</h2>
-            {numPizzas > 0 ? <ul className={"pizzas"}>
-                {pizzas.map((pizza) =>
-                    <Pizza pizzaObj={pizza} key={pizza.name}/>
-                )}
-            </ul> : <p>We are still working on our menu. Please come back later</p>}
+            {numPizzas > 0 ?
+                <>
+                    <p>
+                        Ẩm thực Ý đích thực. 6 món ăn sáng tạo để lựa chọn. Tất cả
+                        từ lò nướng đá của chúng tôi, tất cả đều hữu cơ, tất cả đều ngon.
+                    </p>
+                    <ul className={"pizzas"}>
+                        {pizzas.map((pizza) =>
+                            <Pizza pizzaObj={pizza} key={pizza.name}/>
+                        )}
+                    </ul>
+                </>
+                : <p>We are still working on our menu. Please come back later</p>}
 
             {/*<Pizza name='Pizza spinaci'*/}
             {/*       ingredients='Tomato, mozarella, spinach, and ricotta cheese'*/}
@@ -94,14 +101,14 @@ function Menu() {
 function Pizza({pizzaObj}) {
     console.log(pizzaObj);
 
-    if (pizzaObj.soldOut) return null;
+    // if (pizzaObj.soldOut) return null;
     return (
-        <li className={'pizza'}>
+        <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
             <img src={pizzaObj.photoName} alt={pizzaObj.name}/>
             <div>
                 <h3>{pizzaObj.name}</h3>
                 <p>{pizzaObj.ingredients}</p>
-                <span>{pizzaObj.price + 1}</span>
+                <span>{pizzaObj.soldOut ? "Sold out" : pizzaObj.price}</span>
             </div>
         </li>
     )
